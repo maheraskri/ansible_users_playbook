@@ -1,0 +1,11 @@
+node2
+node1
+
+
+
+
+
+
+
+[all:vars]
+ansible_password= root

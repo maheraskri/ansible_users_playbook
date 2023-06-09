@@ -1,0 +1,10 @@
+users:
+  - username: julie
+    groupname: south 
+  - username: lisa
+    groupname: north
+  - username: mike
+    groupname: west
+  - username: bill
+    groupname: east
+

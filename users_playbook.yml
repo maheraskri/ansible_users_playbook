@@ -1,0 +1,26 @@
+---
+- name: create users and groups
+  hosts: node1,node2
+  gather_facts: no
+  vars_files:
+  - vars/users 
+  tasks:
+  - name: create desired groups
+    group:
+      name: "{{ item }}"
+      state: present
+    loop:
+    - south
+    - north
+    - east
+    - west 
+  - name: create desired users 
+    user:
+      name: "{{ item.username }}"
+      password: "{{ 'test' | password_hash('sha512', 'askriyablid') }}"
+      group: "{{ item.groupname }}"
+      append: no
+      create_home: yes
+      state: present
+    loop: "{{ users }}"
+
