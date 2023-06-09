@@ -1,1 +1,1 @@
-# ansible_users_playbook
+Simple playobook to create users and groups 
